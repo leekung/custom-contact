@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <IsAmAre_CustomContact>
+      <version>1.0.0</version>
+    </IsAmAre_CustomContact>
+  </modules>
+  <frontend>
+    <routers>
+      <customcontact>
+        <use>standard</use>
+          <args>
+            <module>IsAmAre_CustomContact</module>
+            <frontName>customcontact</frontName>
+          </args>
+      </customcontact>
+    </routers>
+  </frontend>
+  <global>
+		<rewrite>
+            <isamare_customcontact_contacts_indexcontroller>
+                <from><![CDATA[#^/contacts/index/#]]></from> <!-- Mage_Contacts_IndexController  -->
+                <to>/customcontact/contacts_index/</to> <!-- IsAmAre_CustomContact_Contacts_IndexController  -->
+            </isamare_customcontact_contacts_indexcontroller>
+		</rewrite>
+    <helpers>
+      <customcontact>
+        <class>IsAmAre_CustomContact_Helper</class>
+      </customcontact>
+    </helpers>
+	<blocks>
+	  <customcontact>
+		<class>IsAmAre_CustomContact_Block</class>
+	  </customcontact>
+			<adminhtml>
+				<rewrite>
+					<cms_block_grid>IsAmAre_CustomContact_Block_Adminhtml_Cms_Block_Grid</cms_block_grid>
+				</rewrite>
+			</adminhtml>
+	</blocks>
+  </global>
+  <admin>
+	<routers>
+	  <customcontact>
+	    <use>admin</use>
+		<args>
+		  <module>IsAmAre_CustomContact</module>
+		  <frontName>admin_customcontact</frontName>
+		</args>
+	  </customcontact>
+	</routers>
+  </admin>
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <isamare>
+                                            <title>Is Am Are - All</title>
+                                        </isamare>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config> 

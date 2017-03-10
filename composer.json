@@ -1,0 +1,26 @@
+{
+    "name": "isamare/custom_contact",
+    "type": "magento-module",
+    "description": "Customized contact page",
+    "homepage": "https://github.com/leekung/paypal-noship",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors": [
+        {
+            "name": "isamare"
+        }
+    ],
+    "extra": {
+        "map": [
+            [
+                "app/etc/modules/IsAmAre_CustomContact.xml",
+                "app/etc/modules/IsAmAre_CustomContact.xml"
+            ],
+            [
+                "app/code/local/IsAmAre/CustomContact",
+                "app/code/local/IsAmAre/CustomContact"
+            ]
+        ]
+    }
+}

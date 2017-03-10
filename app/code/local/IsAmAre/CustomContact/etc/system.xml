@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <isamare module="customcontact" translate="label">
+            <label>Job apply contact email</label>
+            <sort_order>600</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+        </isamare>
+    </tabs>
+    <sections>
+        <isamare translate="label" module="customcontact">
+            <label>Job apply contact email</label>
+            <tab>isamare</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <isamare_group translate="label" module="customcontact">
+                    <label>Job apply contact email</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <contact_email translate="label">
+                            <label>Job apply contact email:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </contact_email>
+                    </fields>
+                </isamare_group>
+            </groups>
+        </isamare>
+    </sections>
+</config>
