@@ -61,6 +61,10 @@ class IsAmAre_CustomContact_Contacts_IndexController extends Mage_Contacts_Index
                     throw new Exception();
                 }
 
+                $postObject->setComment(htmlentities($postObject->getComment(), ENT_QUOTES, 'UTF-8'));
+                $postObject->setName(htmlentities($postObject->getName(), ENT_QUOTES, 'UTF-8'));
+                $postObject->setTelephone(htmlentities($postObject->getTelephone(), ENT_QUOTES, 'UTF-8'));
+
                 $mailTemplate = Mage::getModel('core/email_template');
 
                 if(!empty($attachmentFilePath) && file_exists($attachmentFilePath)){
@@ -70,7 +74,7 @@ class IsAmAre_CustomContact_Contacts_IndexController extends Mage_Contacts_Index
                 }
                 //Hard code email
                 $recipient = Mage::getStoreConfig(self::XML_PATH_EMAIL_RECIPIENT);
-                if($post['subject'] == Mage::helper('contacts')->__('Job apply')) {
+                if(isset($post['subject']) && $post['subject'] == Mage::helper('contacts')->__('Job apply')) {
                     $recipient = Mage::getStoreConfig('isamare/isamare_group/contact_email');
                 }
 
